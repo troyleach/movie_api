@@ -1,0 +1,15 @@
+# General
+
+[x] Initial set up
+[x] Movies route with fake data
+[x] Fake Auth route
+[ ] Initial commit
+[ ] Jest
+[ ] commit
+[ ] set up test suite
+[ ] provide comments | ask questions
+[ ] push to github
+[ ] send email with link to readme.
+
+
+# AC One
