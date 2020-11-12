@@ -1,4 +1,7 @@
-const { fetchOffset } = require('../../../common/helpers/movieHelpers')
+const {
+  fetchOffset,
+  formatCurrency
+} = require('../../../common/helpers/movieHelpers')
 
 describe('FetchOffset', () => {
   it('Expect the correct offset for page 1', () => {
@@ -19,6 +22,36 @@ describe('FetchOffset', () => {
   it('Expect 0 if nothing is past in', () => {
     const result = fetchOffset();
     expect(result).toEqual(0);
+  })
+
+});
+
+describe('formatCurrency', () => {
+  // I should have asked a few questions.
+  // like with currency, return cents? return .00
+  it('if nothing past in Expect the correct currency string', () => {
+    const result = formatCurrency();
+    expect(result).toEqual('$0.00');
+  })
+
+  it('if 0 was past in', () => {
+    const result = formatCurrency(0);
+    expect(result).toEqual('$0.00');
+  })
+
+  it('if 200 was past in', () => {
+    const result = formatCurrency(200);
+    expect(result).toEqual('$200.00');
+  })
+
+  it('if 4000000000', () => {
+    const result = formatCurrency(200);
+    expect(result).toEqual('$4,000,000,000.00');
+  })
+
+  it('if 4000000000.35 round down', () => {
+    const result = formatCurrency(200);
+    expect(result).toEqual('$4,000,000,000.00');
   })
 
 });
