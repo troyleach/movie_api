@@ -10,6 +10,7 @@
 [ ] hook db's up
 [ ] push to github
 [ ] Add script in package.json for path
+[ ] Add the postman json to readme
 
 [ ] create models
 [ ] create basic endpoint

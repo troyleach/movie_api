@@ -17,7 +17,7 @@ class RatingsController {
       // logging error 
       return res.status(500).send({
         "message": 'something went wrong fetching ratings',
-        "error": error
+        "error": error.message
       })
     };
   };

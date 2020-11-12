@@ -26,18 +26,6 @@ describe('Movies', () => {
             done();
           });
       });
-
-      it('Expect the correct columns', async done => {
-        request(app)
-          .get("/movies")
-          .then(response => {
-            const movie = response.body[0];
-            const columns = Object.keys(movie);
-            const expected = ['imdbId', 'title', 'genres', 'releaseDate', 'budget'];
-            expect(columns).toEqual(expected);
-            done();
-          });
-      });
     });
   });
 });
