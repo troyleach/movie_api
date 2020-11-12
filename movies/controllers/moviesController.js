@@ -1,11 +1,12 @@
-exports.list = (req, res) => {
-  // get the movies
-  const data = [
-    { name: 'the movie one' },
-    { name: 'the movie two' },
-    { name: 'the movie three' },
-    { name: 'the movie four' },
-    { name: 'the movie five' }
-  ];
-  res.status(200).send(data);
+const Movie = require('../models/Movie');
+
+exports.list = async (req, res) => {
+  try {
+    const movies = await Movie.findAll({ limit: 8 })
+    return res.status(200).send(movies);
+
+  } catch (error) {
+    // logger
+    return res.status(404).send({ message: error })
+  };
 }

@@ -26,6 +26,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // 404 and forward to error handler
 // Joi / celebrate validation
 // error handler
+
+// Root route
+app.get('/', (req, res, next) => {
+  res.status(200).send({
+    "message": "API for Movies and Ratings",
+    "Endpoints": {
+      "/auth": "Fake endpoint for Auth",
+      "/movies": "GET all movies"
+    }
+  })
+})
+
 AuthorizationRouter.routes(app);
 MoviesRouter.routes(app);
 
