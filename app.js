@@ -34,8 +34,8 @@ app.get('/', (req, res, next) => {
     "message": "API for Movies and Ratings",
     "Endpoints": {
       "/auth": "Fake endpoint for Auth",
-      "/movies": "GET all movies",
-      "/ratings": "Limit 50"
+      "/movies": "GET all movies limit 50",
+      "/ratings": "GET all ratings Limit 50"
     }
   })
 })
