@@ -7,7 +7,7 @@ const request = require('supertest');
 // to create at least a index, I had to create the model 
 // FIXME: Mock db response
 describe('Movies', () => {
-  describe('GET /movies', () => {
+  describe('GET /movies/:id', () => {
 
     describe('Negative results', () => {
       it('Expect 404 if movie is not found', () => {
@@ -56,11 +56,11 @@ describe('Movies', () => {
 
       it('Expect budget to be in dollars', async done => {
         request(app)
-          .get("/movies")
+          .get("/movies/274")
           .then(response => {
             const { body } = response;
             const movie = body.find(record => record.imdbId === 'tt0113101');
-            const expected = '$4,000,000';
+            const expected = '$19,000,000';
             expect(movie.budget).toEqual(expected);
             done();
           });
