@@ -47,8 +47,8 @@ describe('Movies', () => {
           .then(response => {
             const movie = response.body[0];
             const columns = Object.keys(movie);
-            const expected = ['imdb id', 'title', 'description', 'release date', 'budget', 'runtime', 'average rating',
-              'genres', 'original language', 'production companies', 'ratings'];
+            const expected = ['imdbId', 'title', 'description', 'releaseDate', 'budget', 'runtime', 'averageRating',
+              'genres', 'originalLanguage', 'productionCompanies', 'ratings'];
             expect(columns.sort()).toEqual(expected.sort());
             done();
           });
