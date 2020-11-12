@@ -1,6 +1,11 @@
 const { fetchOffset } = require('../../../common/helpers/movieHelpers')
 
 describe('FetchOffset', () => {
+  it('Expect the correct offset for page 1', () => {
+    const result = fetchOffset(1);
+    expect(result).toEqual(0);
+  })
+
   it('Expect the correct offset for page 3', () => {
     const result = fetchOffset(3);
     expect(result).toEqual(100);
