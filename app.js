@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 
 const AuthorizationRouter = require('./authorization/routes.js');
 const MoviesRouter = require('./movies/routes')
+const RatingsRouter = require('./ratings/routes')
 
 // middleware
 app.use((req, res, next) => {
@@ -33,12 +34,14 @@ app.get('/', (req, res, next) => {
     "message": "API for Movies and Ratings",
     "Endpoints": {
       "/auth": "Fake endpoint for Auth",
-      "/movies": "GET all movies"
+      "/movies": "GET all movies",
+      "/ratings": "Limit 50"
     }
   })
 })
 
 AuthorizationRouter.routes(app);
 MoviesRouter.routes(app);
+RatingsRouter.routes(app);
 
 module.exports = { app };

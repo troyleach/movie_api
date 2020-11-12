@@ -3,13 +3,53 @@
 [x] Initial set up
 [x] Movies route with fake data
 [x] Fake Auth route
-[ ] Initial commit
-[ ] Jest
-[ ] commit
-[ ] set up test suite
-[ ] provide comments | ask questions
+[x] Initial commit
+[x] Jest
+[x] commit
+[x] set up test suite
+[ ] hook db's up
 [ ] push to github
-[ ] send email with link to readme.
+[ ] Add script in package.json for path
+
+[ ] create models
+[ ] create basic endpoint
+[ ] draft of tests for ratings (this endpoint is NOT used)
+[ ] draft of tests for movies
+
+[ ] Start with AC 1 
 
 
-# AC One
+# Acceptance Criteria
+### AC 1 list all movies
+/movies?page=2
+it returns at most 50 movies per page
+it defaults to page 1 if no page query is sent
+it defaults to page 1 if page query is anything but a number
+it should include only imdbid, title, genres, release date, budget
+it should return budget in dollars
+
+
+### AC 2 movie details
+/movies/:id
+it should return 404 if movie is not found
+it should return budget in dollars
+it should include the correct columns
+it should include the ratings
+
+
+### AC 3 movies by year
+/movies?page=1&year=2020&sort=ASC
+it should return an empty array if no movies found
+it defaults to page 1 if no page query is sent
+it defaults to page 1 if page query is anything but a number
+it should sort by date in chronological order and descending
+sort order can be descending, when the sort=DESC parameter is provided
+
+### AC 4 movies by genre
+/movies?page=1&genre=horror
+it should return an empty array when no genre are found
+it defaults to page 1 if no page query is sent
+it defaults to page 1 if page query is anything but a number
+it should include the correct columns
+
+

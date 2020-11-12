@@ -31,53 +31,53 @@ testDbConnection();
 const Movie = sequelize.define('Movie', {
   movieId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
     autoIncrement: true,
     primaryKey: true
   },
   imdbId: {
     type: DataTypes.TEXT,
-    allowNull: true
+    allowNull: false
   },
   title: {
     type: DataTypes.TEXT,
-    allowNull: true
+    allowNull: false
   },
   overview: {
     type: DataTypes.TEXT,
-    allowNull: false
+    allowNull: true
   },
   productionCompanies: {
     type: DataTypes.TEXT,
-    allowNull: false
+    allowNull: true
   },
   releaseDate: {
     type: DataTypes.TEXT,
-    allowNull: false
+    allowNull: true
   },
   budget: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: true
   },
   revenue: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: true
   },
   runtime: {
     type: DataTypes.REAL,
-    allowNull: false
+    allowNull: true
   },
   language: {
     type: DataTypes.TEXT,
-    allowNull: false
+    allowNull: true
   },
   genres: {
     type: DataTypes.TEXT,
-    allowNull: false
+    allowNull: true
   },
   status: {
     type: DataTypes.TEXT,
-    allowNull: false
+    allowNull: true
   }
 },
   {
