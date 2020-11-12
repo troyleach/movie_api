@@ -15,6 +15,8 @@ const sequelize = new Sequelize({
   storage: dbPath
 });
 
+const { formatCurrency } = require('../../common/helpers/movieHelpers');
+
 const Movie = sequelize.define('Movie', {
   movieId: {
     type: DataTypes.INTEGER,
@@ -44,7 +46,12 @@ const Movie = sequelize.define('Movie', {
   },
   budget: {
     type: DataTypes.INTEGER,
-    allowNull: true
+    allowNull: true,
+    get() {
+      const value = this.getDataValue('budget');
+      const currency = formatCurrency({ number: value })
+      return currency;
+    }
   },
   revenue: {
     type: DataTypes.INTEGER,
