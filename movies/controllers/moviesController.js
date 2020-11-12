@@ -15,6 +15,7 @@ class MoviesController {
       offset = fetchOffset(parseInt(page));
     }
 
+    // FIXME: should not hard code limit
     const limit = 50;
     const attributes = ['imdbId', 'title', 'genres', 'releaseDate', 'budget']
     try {
