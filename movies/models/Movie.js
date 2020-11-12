@@ -15,19 +15,6 @@ const sequelize = new Sequelize({
   storage: dbPath
 });
 
-const testDbConnection = async () => {
-  try {
-    await sequelize.authenticate();
-    console.log('Connection has been established successfully to the movies db.');
-  } catch (error) {
-    console.error('Unable to connect to the database:', error);
-  }
-}
-testDbConnection();
-
-// Lets make a model
-// what is datatype REAL => number
-// module.exports = (sequelize, DataTypes) => {
 const Movie = sequelize.define('Movie', {
   movieId: {
     type: DataTypes.INTEGER,

@@ -1,4 +1,4 @@
-const MoviesController = require('./controllers/moviesController');
+const MoviesController = require('./controllers/moviesController').init();
 // check PermissionMiddleware
 
 exports.routes = function (app) {

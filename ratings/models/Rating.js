@@ -9,17 +9,6 @@ const sequelize = new Sequelize({
   storage: dbPath
 });
 
-const testDbConnection = async () => {
-  try {
-    await sequelize.authenticate();
-    console.log('Connection has been established successfully to the movies db.');
-  } catch (error) {
-    console.error('Unable to connect to the database:', error);
-  }
-}
-testDbConnection();
-
-
 const Rating = sequelize.define('Rating', {
   ratingId: {
     type: DataTypes.INTEGER,

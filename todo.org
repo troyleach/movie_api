@@ -1,4 +1,4 @@
-# General
+# General todo
 
 [x] Initial set up
 [x] Movies route with fake data
@@ -15,8 +15,17 @@
 [ ] create basic endpoint
 [ ] draft of tests for ratings (this endpoint is NOT used)
 [ ] draft of tests for movies
+[ ] turn off sequelize execting logging
 
-[ ] Start with AC 1 
+[ ] close db
+
+[ ] AC 1
+[ ] AC 2
+
+### Bonus
+[ ] AC 3
+[ ] AC 4
+
 
 
 # Acceptance Criteria
