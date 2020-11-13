@@ -1,23 +1,19 @@
-// const { performRequest } = require('../requestHelpers');
 const { app } = require('../../app');
 const request = require('supertest');
-// const { response } = require('express');
 
-// I understand this was not part of the challenge, but it was easier for me
-// to create at least a index, I had to create the model 
 // FIXME: Mock db response
 describe('Movies', () => {
   describe('GET /movies/:id', () => {
 
     describe('Negative results', () => {
-      it('Expect 404 if movie is not found', () => {
+      it('Expect 404 if movie is not found', done => {
         request(app)
           .get("/movies/4000")
           .then(response => {
-            const { statusCode, message } = response;
+            const { statusCode, body } = response;
 
             expect(statusCode).toEqual(404);
-            expect(message).toEqual('Movie not found');
+            expect(body.message).toEqual('Movie not found');
             done();
           });
       });
@@ -32,23 +28,20 @@ describe('Movies', () => {
 
             expect(statusCode).toEqual(200);
             expect(body.title).toEqual('The Silence of the Lambs');
-            expect(body).toHaveProperty('description');
-            expect(body).toHaveProperty('release date');
-            expect(body).toHaveProperty('ratings');
-            expect(body.ratings.length).toEqual(400);
-            expect(body['average rating']).toEqual(33);
+            expect(body.ratings.length).toEqual(3);
+            expect(body['averageRating']).toEqual("2.7");
             done();
           });
       });
 
       it('Expect the correct columns', async done => {
         request(app)
-          .get("/movies")
+          .get("/movies/274")
           .then(response => {
-            const movie = response.body[0];
+            const movie = response.body;
             const columns = Object.keys(movie);
             const expected = ['imdbId', 'title', 'description', 'releaseDate', 'budget', 'runtime', 'averageRating',
-              'genres', 'originalLanguage', 'productionCompanies', 'ratings'];
+              'genres', 'language', 'productionCompanies', 'ratings'];
             expect(columns.sort()).toEqual(expected.sort());
             done();
           });
@@ -59,9 +52,8 @@ describe('Movies', () => {
           .get("/movies/274")
           .then(response => {
             const { body } = response;
-            const movie = body.find(record => record.imdbId === 'tt0113101');
             const expected = '$19,000,000';
-            expect(movie.budget).toEqual(expected);
+            expect(body.budget).toEqual(expected);
             done();
           });
       });
