@@ -7,21 +7,22 @@
 [x] Jest
 [x] commit
 [x] set up test suite
-[ ] hook db's up
-[ ] push to github
+[x] hook db's up
+[x] push to github
 [ ] Add script in package.json for path
 [ ] Add the postman json to readme
 
-[ ] create models
-[ ] create basic endpoint
-[ ] draft of tests for ratings (this endpoint is NOT used)
-[ ] draft of tests for movies
+[x] create models
+[x] create basic endpoint
+[x] draft of tests for ratings (this endpoint is NOT used)
+[x] draft of tests for movies
 [ ] turn off sequelize execting logging
+[x] I asked a questions about release date, movies are set up releaseDate, movies/id is set up release date
 
 [ ] close db
 
-[ ] AC 1
-[ ] AC 2
+[x] AC 1
+[x] AC 2
 
 ### Bonus
 [ ] AC 3
@@ -32,19 +33,21 @@
 # Acceptance Criteria
 ### AC 1 list all movies
 /movies?page=2
-it returns at most 50 movies per page
-it defaults to page 1 if no page query is sent
-it defaults to page 1 if page query is anything but a number
-it should include only imdbid, title, genres, release date, budget
-it should return budget in dollars
+[x] it returns at most 50 movies per page
+[x] it defaults to page 1 if no page query is sent
+[x] it defaults to page 1 if page query is anything but a number
+[x] it should include only imdbid, title, genres, release date, budget
+[x] it should return budget in dollars
 
 
 ### AC 2 movie details
 /movies/:id
-it should return 404 if movie is not found
-it should return budget in dollars
-it should include the correct columns
-it should include the ratings
+[x] it should return 404 if movie is not found
+[x] it should return budget in dollars
+[x] it should include the correct columns
+    - imdb id, title, description, release date, budget, runtime, average rating,
+     genres, original language, production companies
+[x] it should include the ratings
 
 
 ### AC 3 movies by year

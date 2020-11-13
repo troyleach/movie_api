@@ -1,10 +1,6 @@
-// const { performRequest } = require('../requestHelpers');
 const { app } = require('../../app');
 const request = require('supertest');
-// const { response } = require('express');
 
-// I understand this was not part of the challenge, but it was easier for me
-// to create at least a index, I had to create the model 
 // FIXME: Mock db response
 describe('Movies', () => {
   describe('GET /movies', () => {

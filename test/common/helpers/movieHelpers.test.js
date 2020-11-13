@@ -1,6 +1,7 @@
 const {
   fetchOffset,
-  formatCurrency
+  formatCurrency,
+  calculateAverageRating
 } = require('../../../common/helpers/movieHelpers')
 
 describe('FetchOffset', () => {
@@ -68,6 +69,27 @@ describe('formatCurrency', () => {
   it('Japanese Yen', () => {
     const result = formatCurrency({ country: 'ja-JP', number: 123456.789, currency: 'JPY', decimals: 3 });
     expect(result).toEqual('￥123,456.789');
+  })
+
+});
+
+describe('calculateAverageRating', () => {
+  it('Expect 0 for empty array', () => {
+    const data = [];
+    const result = calculateAverageRating(data);
+    expect(result).toEqual(0);
+  })
+
+  it('Expect average rating', () => {
+    const data = [{ rating: 2 }];
+    const result = calculateAverageRating(data);
+    expect(result).toEqual('2.0');
+  })
+
+  it('Expect average rating', () => {
+    const data = [{ rating: 2 }, { rating: 7 }, { rating: 5 }, { rating: 3 }];
+    const result = calculateAverageRating(data);
+    expect(result).toEqual('4.3');
   })
 
 });

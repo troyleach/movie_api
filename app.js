@@ -44,4 +44,8 @@ AuthorizationRouter.routes(app);
 MoviesRouter.routes(app);
 RatingsRouter.routes(app);
 
+app.get('*', (req, res) => {
+  res.status(404).send({ "message": "This routes does not exist" })
+});
+
 module.exports = { app };

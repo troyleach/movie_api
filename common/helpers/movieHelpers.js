@@ -43,7 +43,28 @@ function formatCurrency({
   return `${formatNumber}`;
 };
 
+
+/**
+ * 
+ * @param {Array.<Objectj>} RatingObjects
+ * @returns {number} '2.7'
+ * 
+ */
+function calculateAverageRating(ratings) {
+  if (ratings.length === 0)
+    return 0;
+
+  const totalRating = ratings.reduce((acc, obj) => {
+    return acc + obj.rating;
+  }, 0);
+
+  const averageTotal = totalRating / ratings.length;
+
+  return averageTotal.toFixed(1);
+};
+
 module.exports = {
   fetchOffset,
-  formatCurrency
+  formatCurrency,
+  calculateAverageRating
 };

@@ -72,6 +72,12 @@ const Movie = sequelize.define('Movie', {
   status: {
     type: DataTypes.TEXT,
     allowNull: true
+  },
+  ratings: {
+    type: Sequelize.VIRTUAL
+  },
+  averageRating: {
+    type: Sequelize.VIRTUAL
   }
 },
   {
