@@ -35,18 +35,19 @@ runs the app in development mode. The server will not restart on save.
 
 `http://localhost:3010`
 
+the root will give you a list of endpoints.
+
 ### Routes
 
 `GET`
 
 ```javascript
-/
 /ratings
 /auth
 /movies?page=2
 /movies/:id
-/movies?page=1&year=2020&sort=ASC
-/movies?page=1&genre=horror
+/movies?page=1&year=2020&sort=ASC // not built
+/movies?page=1&genre=horror // not built
 ```
 
 You can open up your favorite [API Client](https://www.postman.com/) to explore these routes.
@@ -58,7 +59,9 @@ You can open up your favorite [API Client](https://www.postman.com/) to explore 
 none
 
 # Database
-No set up is needed. However I did have some issues with the path. currently hard coded. NOT ideal.
+No set up is needed. ~~However I did have some issues with the path. currently hard coded. NOT ideal~~.
+
+> I feel this has been resolved.
 
 # Set up the API
 `npm install`
