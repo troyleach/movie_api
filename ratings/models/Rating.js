@@ -1,7 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
 
 const dbPath = `${process.cwd()}/db/ratings.db`;
-console.log('here is the root', dbPath)
 
 // Look here for logging : https://sequelize.org/master/manual/getting-started.html
 // scroll down to logging bottom of page
