@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "c4e21b10-688f-4ee7-8bf7-c281273d6eb8",
+		"name": "Aetna Movie API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getLogin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3010/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"auth"
+					]
+				},
+				"description": "Just a route demonstrate auth"
+			},
+			"response": [
+				{
+					"name": "getLoginSuccess",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3010/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization, api-key"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-y99rrcOCj9/vQb0J3E0EInoWEX4\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Nov 2020 05:28:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accessToken\": \"accessToken\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getRatings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3010/ratings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"ratings"
+					]
+				},
+				"description": "Just a route demonstrate auth"
+			},
+			"response": []
+		},
+		{
+			"name": "getMovies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3010/movies?page=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"movies"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Just a route demonstrate auth"
+			},
+			"response": []
+		},
+		{
+			"name": "getMovieById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3010/movies/274",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"movies",
+						"274"
+					]
+				},
+				"description": "Just a route demonstrate auth"
+			},
+			"response": [
+				{
+					"name": "getMovieByIdSuccess",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3010/movies/274",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"movies",
+								"274"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization, api-key"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1008"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3f0-RZPiFKHZpJpGzLpvj+caJar2RW0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Nov 2020 04:20:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"budget\": \"$19,000,000\",\n    \"imdbId\": \"tt0102926\",\n    \"title\": \"The Silence of the Lambs\",\n    \"description\": \"FBI trainee, Clarice Starling ventures into a maximum-security asylum to pick the diseased brain of Hannibal Lecter, a psychiatrist turned homicidal cannibal. Starling needs clues to help her capture a serial killer. but her Faustian relationship with Lecter soon leads to his escape, and now two deranged killers are on the loose.\",\n    \"releaseDate\": \"1991-02-01\",\n    \"runtime\": 119,\n    \"genres\": \"[{\\\"id\\\": 80, \\\"name\\\": \\\"Crime\\\"}, {\\\"id\\\": 18, \\\"name\\\": \\\"Drama\\\"}, {\\\"id\\\": 53, \\\"name\\\": \\\"Thriller\\\"}]\",\n    \"language\": null,\n    \"productionCompanies\": \"[{\\\"name\\\": \\\"Orion Pictures\\\", \\\"id\\\": 41}, {\\\"name\\\": \\\"Strong Heart/Demme Production\\\", \\\"id\\\": 55072}]\",\n    \"ratings\": [\n        {\n            \"ratingId\": 23866,\n            \"userId\": 169,\n            \"movieId\": 274,\n            \"rating\": 2,\n            \"timestamp\": 1234227686\n        },\n        {\n            \"ratingId\": 54505,\n            \"userId\": 389,\n            \"movieId\": 274,\n            \"rating\": 3,\n            \"timestamp\": 829492316\n        },\n        {\n            \"ratingId\": 55137,\n            \"userId\": 396,\n            \"movieId\": 274,\n            \"rating\": 3,\n            \"timestamp\": 839255123\n        }\n    ],\n    \"averageRating\": \"2.7\"\n}"
+				}
+			]
+		},
+		{
+			"name": "root",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3010/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						""
+					]
+				},
+				"description": "Just a route demonstrate auth"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

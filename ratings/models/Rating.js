@@ -1,9 +1,10 @@
 const { Sequelize, DataTypes } = require('sequelize');
 
-const path = require('path');
-// const dbPath = path.resolve(__dirname, 'movies.db');
-const dbPath = '/Users/troyleach/projects/2020/Aetna/movie_api/db/ratings.db'
+const dbPath = `${process.cwd()}/db/ratings.db`;
+console.log('here is the root', dbPath)
 
+// Look here for logging : https://sequelize.org/master/manual/getting-started.html
+// scroll down to logging bottom of page
 const sequelize = new Sequelize({
   dialect: 'sqlite',
   storage: dbPath
