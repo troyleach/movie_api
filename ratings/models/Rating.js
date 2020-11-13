@@ -22,11 +22,7 @@ const Rating = sequelize.define('Rating', {
   },
   movieId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: "Movie",
-      key: 'movieId'
-    }
+    allowNull: false
   },
   rating: {
     type: DataTypes.REAL,
