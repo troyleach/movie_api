@@ -52,11 +52,12 @@
 
 ### AC 3 movies by year
 /movies?page=1&year=2020&sort=ASC
-it should return an empty array if no movies found
-it defaults to page 1 if no page query is sent
-it defaults to page 1 if page query is anything but a number
-it should sort by date in chronological order and descending
-sort order can be descending, when the sort=DESC parameter is provided
+[x] it should return an empty array if no movies found
+[x] sort order can be descending, when the sort=DESC parameter is provided
+[x] it defaults to page 1 if no page query is sent
+[x] it defaults to page 1 if page query is anything but a number
+[x] it Columns include: imdb id, title, genres, release date, budget
+[x] it should sort by date in chronological order and descending
 
 ### AC 4 movies by genre
 /movies?page=1&genre=horror
