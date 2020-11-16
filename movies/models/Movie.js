@@ -1,5 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
 
+
 const dbPath = `${process.cwd()}/db/movies.db`;
 
 // Look here for logging : https://sequelize.org/master/manual/getting-started.html
@@ -62,7 +63,11 @@ const Movie = sequelize.define('Movie', {
   },
   genres: {
     type: DataTypes.TEXT,
-    allowNull: true
+    allowNull: true,
+    get() {
+      const value = this.getDataValue('genres');
+      return JSON.parse(value);
+    }
   },
   status: {
     type: DataTypes.TEXT,

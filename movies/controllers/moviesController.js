@@ -1,27 +1,53 @@
 const Movie = require('../models/Movie');
 const Rating = require('../../ratings/models/Rating');
 
+const { Op } = require("sequelize");
+
 const { fetchOffset, calculateAverageRating } = require('../../common/helpers/movieHelpers');
 
 class MoviesController {
   constructor() {
     this.model = Movie;
+    this.selectQueries = {
+      offset: 0,
+      limit: 50,
+      attributes: ['imdbId', 'title', 'genres', 'releaseDate', 'budget'],
+      where: {}
+    }
     this.index = this.index.bind(this);
     this.show = this.show.bind(this);
   }
 
   async index(req, res) {
-    const { page } = req.query;
-    let offset = 0;
-    if (page) {
-      offset = fetchOffset(parseInt(page));
+    const { page, year, limit, sort } = req.query;
+    if (limit) {
+      this.selectQueries.limit = limit;
     }
 
-    // FIXME: should not hard code limit
-    const limit = 50;
-    const attributes = ['imdbId', 'title', 'genres', 'releaseDate', 'budget']
+    if (page) {
+      this.selectQueries.offset = fetchOffset(parseInt(page));
+    }
+
+    if (year) {
+      this.selectQueries.where = {
+        releaseDate: {
+          [Op.like]: `%${year}%`
+        }
+      }
+
+      this.selectQueries.order = [
+        ['releaseDate', 'ASC']
+      ]
+    };
+
+    if (sort) {
+      this.selectQueries.order = [
+        ['releaseDate', sort]
+      ]
+    };
+
     try {
-      const movies = await this.model.findAll({ offset, limit, attributes });
+      const movies = await Movie.findAll(this.selectQueries)
       return res.status(200).send(movies);
     } catch (error) {
       // logging error 

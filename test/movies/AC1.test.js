@@ -12,11 +12,11 @@ describe('Movies', () => {
           .then(response => {
             const { body } = response;
             const shouldInclude = body.some(record => record.title === "Back to the Future Part III")
-            const shouldNotIncludeMovie = body.some(record => record.title === "The Elementary Particles");
+            const shouldNotIncludeMovie = body.some(record => record.title !== "The Elementary Particles");
 
             expect(response.statusCode).toBe(200);
             expect(shouldInclude).toBe(true);
-            expect(shouldNotIncludeMovie).toBe(false);
+            expect(shouldNotIncludeMovie).toBe(true);
             done();
           });
       });
@@ -24,14 +24,15 @@ describe('Movies', () => {
       it('Expect to default to page 1 if no page query is sent', async done => {
         request(app)
           .get("/movies")
+          .query({ page: 1 })
           .then(response => {
             const { body } = response;
             const shouldInclude = body.some(record => record.title === "Ariel")
-            const shouldNotIncludeMovie = body.some(record => record.title === "The Elementary Particles");
+            const shouldNotIncludeMovie = body.some(record => record.title !== "The Elementary Particles");
 
             expect(body.length).toEqual(50);
             expect(shouldInclude).toBe(true);
-            expect(shouldNotIncludeMovie).toBe(false);
+            expect(shouldNotIncludeMovie).toBe(true);
             done();
           });
       });

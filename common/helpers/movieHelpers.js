@@ -51,6 +51,7 @@ function formatCurrency({
  * 
  */
 function calculateAverageRating(ratings) {
+  // FIXME: this could have been done with query and not a function
   if (ratings.length === 0)
     return 0;
 
