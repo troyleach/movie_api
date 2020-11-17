@@ -32,6 +32,9 @@ live on Heroku:
 
 the root will give you a list of endpoints.
 
+This is now live on Heroku
+`https://dev-movie-api.herokuapp.com/`
+
 ### Routes
 
 `GET`
