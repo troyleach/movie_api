@@ -41,7 +41,7 @@ the root will give you a list of endpoints.
 /auth
 /movies?page=2
 /movies/:id
-/movies?page=1&year=2020&sort=ASC // not built
+/movies?page=1&year=2020&sort=ASC
 /movies?page=1&genre=horror // not built
 ```
 
