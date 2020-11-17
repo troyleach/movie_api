@@ -4,15 +4,6 @@ Built by Troy Leach
 
 November 12, 2020,
 
-I want to thank you for the opportunity to work on this fun project. I used a new folder system that I have not used in the past. Read a blog a few weeks ago about api set up and I wanted to try it out I am excited to discuss it with you.
-
-Below I have left notes on why I did some things, I have also left some comments in the code as well.
-
-There is also a file named todo.org. This is a little bit of a insight into my workflow. I try and create todo lists. I would not normally check this in. In this file also lives the routes for all four user stories as well a list of tests that I would write for each.
-
-To even get further into the coding life of 'ME' I tried to be very explicit with my commits and messages.
-I made PR's for the two user stories I completed. I did use TDD through out this project.
-
 # movie_api
 
 
@@ -34,6 +25,10 @@ will restart on save.
 runs the app in development mode. The server will not restart on save.
 
 `http://localhost:3010`
+
+live on Heroku:
+
+`https://dev-movie-api.herokuapp.com/`
 
 the root will give you a list of endpoints.
 
